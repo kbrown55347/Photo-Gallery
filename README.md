@@ -14,7 +14,7 @@ TO DO:
 
 [x] Add images to public/images folder
 [x] Modify galleryItems array (in `server/modules/data.js`) to include an `id`, `title`, `description` and `path for`
-[ ] Use axios to GET data from '/gallery' and store in App.jsx
+[x] Use axios to GET data from '/gallery' and store in App.jsx
 [ ] Create component for GalleryList, pass in gallery data stored in 'App' via props
     - [ ] Iterate over list of gallery data (.map)
     - [ ] Make GalleryItems (array?) 

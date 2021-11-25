@@ -3,10 +3,12 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-// import components
 
+// import components
+import GalleryList from '../GalleryList/GalleryList.jsx';
 
 function App() {
+  const [galleryList, setGalleryList] = useState([]);
 
   // The equivalent to $(document).ready(onReady);
   useEffect(() => {
@@ -22,6 +24,8 @@ function App() {
     url: '/gallery'
     }).then((response) => {
     console.log('in GET /gallery route', response.data);
+    // set state
+    setGalleryList(response.data);
     }).catch((error) => {
     console.log('GET /gallery failed', error);
     });
@@ -32,10 +36,11 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <p>Gallery goes here</p>
-        {/* <img src="images/goat_small.jpg"/> */}
+
+        <GalleryList galleryList={galleryList}/>
+
       </div>
     );
-  } // end App
+  }; // end App
 
 export default App;
