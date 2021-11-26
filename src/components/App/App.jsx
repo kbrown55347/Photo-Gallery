@@ -38,7 +38,6 @@ function App() {
     axios({
             method: 'PUT',
             url: `/gallery/like/${photoId}`,
-            data: photoId.id
         }).then((response) => {
             console.log('PUT route success');
             fetchGallery();

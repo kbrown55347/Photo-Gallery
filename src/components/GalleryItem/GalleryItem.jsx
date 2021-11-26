@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from '@mui/material/Button';
 
 
 function GalleryItem({gallery, addLikes}) {
@@ -27,19 +28,20 @@ function GalleryItem({gallery, addLikes}) {
         };
     };
 
-    // create function to grab gallery object
+    // create function to grab photo id
     const handleClick = (event) => {
         addLikes(event.target.id);
-        console.log('You clicked me', event.target);
-        // const photoId = {id: event.target.id}
+        // console.log('You clicked me', event.target);
     } // end handleClick
 
     return (
         <div key={gallery.id} className="images-descriptions">
             {displayImageOrDescription()}
             <div>
-                <button id={gallery.id}
-                onClick= {handleClick}>💟</button>
+                <Button className='button' id={gallery.id}
+                variant="contained"
+                color="success"
+                onClick= {handleClick}>🤍</Button>
             </div>
                 <p>{gallery.likes} people love this photo!</p>
         </div>
