@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 
-function GalleryItem({gallery}) {
+function GalleryItem({gallery, addLikes}) {
 
     // create useState for image
     const [showImage, setShowImage] = useState(gallery.path);
@@ -27,20 +27,21 @@ function GalleryItem({gallery}) {
         };
     };
 
-    // const handleClick = (event) => {
-    //     console.log(event.target.id);
-    //     const photo = event.target;
-    //     addLikes(event);
-    // };
-
+    // create function to grab gallery object
+    const handleClick = (event) => {
+        addLikes(event.target.id);
+        console.log('You clicked me', event.target);
+        // const photoId = {id: event.target.id}
+    } // end handleClick
 
     return (
         <div key={gallery.id} className="images-descriptions">
             {displayImageOrDescription()}
             <div>
-            <button id={gallery.id}>💟</button>
+                <button id={gallery.id}
+                onClick= {handleClick}>💟</button>
             </div>
-            <p>{gallery.likes} people love this photo!</p>
+                <p>{gallery.likes} people love this photo!</p>
         </div>
     );
 };

@@ -6,7 +6,7 @@ import axios from 'axios';
 
 // import components
 import GalleryList from '../GalleryList/GalleryList.jsx';
-// import GalleryItem from '../GalleryItem/GalleryItem.jsx';
+
 
 function App() {
   const [galleryList, setGalleryList] = useState([]);
@@ -34,11 +34,11 @@ function App() {
 
 
   // create function for axios PUT route
-  const addLikes = (photo) => {  
+  const addLikes = (photoId) => {  
     axios({
             method: 'PUT',
-            url: `/gallery/like/${photo.id}`,
-            data: photo.id
+            url: `/gallery/like/${photoId}`,
+            data: photoId.id
         }).then((response) => {
             console.log('PUT route success');
             fetchGallery();
@@ -54,8 +54,8 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
 
-        <GalleryList galleryList={galleryList}/>
-        {/* <GalleryItem addLikes={addLikes}/> */}
+        <GalleryList galleryList={galleryList}
+        addLikes={addLikes}/>
 
       </div>
     );
