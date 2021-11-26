@@ -6,6 +6,7 @@ import axios from 'axios';
 
 // import components
 import GalleryList from '../GalleryList/GalleryList.jsx';
+// import GalleryItem from '../GalleryItem/GalleryItem.jsx';
 
 function App() {
   const [galleryList, setGalleryList] = useState([]);
@@ -30,6 +31,22 @@ function App() {
     console.log('GET /gallery failed', error);
     });
   }; // end fetchGallery
+
+
+  // create function for axios PUT route
+  const addLikes = (photo) => {  
+    axios({
+            method: 'PUT',
+            url: `/gallery/like/${photo.id}`,
+            data: photo.id
+        }).then((response) => {
+            console.log('PUT route success');
+            fetchGallery();
+        }).catch((error) => {
+            console.error('PUT route', error)
+        })
+    } // end addLikes;
+
     
   return (
       <div className="App">
@@ -38,6 +55,7 @@ function App() {
         </header>
 
         <GalleryList galleryList={galleryList}/>
+        {/* <GalleryItem addLikes={addLikes}/> */}
 
       </div>
     );

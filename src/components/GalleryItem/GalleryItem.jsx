@@ -1,21 +1,18 @@
 import { useState } from 'react';
 
 
-function GalleryItem({ gallery }) {
+function GalleryItem({gallery}) {
 
     // create useState for image
     const [showImage, setShowImage] = useState(gallery.path);
 
-
     // create function to either show image or show description based on state
     const displayImageOrDescription = () => {
         if (showImage === gallery.path) {
-            return <img className="photo" key={gallery.id} 
-                    src={gallery.path} onClick={toggleImage}
-                    width="250"
-                    height="250" />
+            return <img className="photo" 
+                    src={gallery.path} onClick={toggleImage}/>
         } else {
-            return <p className="description"
+            return <p className="photo"
                     onClick={toggleImage}>
                     {gallery.description}</p>
         };
@@ -30,11 +27,20 @@ function GalleryItem({ gallery }) {
         };
     };
 
+    // const handleClick = (event) => {
+    //     console.log(event.target.id);
+    //     const photo = event.target;
+    //     addLikes(event);
+    // };
+
 
     return (
-        <div>
+        <div key={gallery.id} className="images-descriptions">
             {displayImageOrDescription()}
-            <button>💕</button>
+            <div>
+            <button id={gallery.id}>💟</button>
+            </div>
+            <p>{gallery.likes} people love this photo!</p>
         </div>
     );
 };
