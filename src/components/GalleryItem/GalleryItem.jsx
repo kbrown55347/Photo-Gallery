@@ -11,11 +11,9 @@ function GalleryItem({ gallery }) {
     const displayImageOrDescription = () => {
         if (showImage === gallery.path) {
             return <img className="photo" key={gallery.id} 
-                    src={gallery.path} onClick={toggleImage}
-                    width="250"
-                    height="250" />
+                    src={gallery.path} onClick={toggleImage}/>
         } else {
-            return <p className="description"
+            return <p className="photo"
                     onClick={toggleImage}>
                     {gallery.description}</p>
         };
@@ -32,7 +30,7 @@ function GalleryItem({ gallery }) {
 
 
     return (
-        <div>
+        <div className="images-descriptions">
             {displayImageOrDescription()}
             <button>💕</button>
         </div>

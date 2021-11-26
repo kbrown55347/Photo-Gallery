@@ -13,3 +13,13 @@
   font-size: 1.5em;
 }
 
+.photo {
+  border-radius: 1em;
+  width: 20em;
+  height: 20em;
+}
+
+.images-descriptions {  
+  display: inline-block;
+}
+
