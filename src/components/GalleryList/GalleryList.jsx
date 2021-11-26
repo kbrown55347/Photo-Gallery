@@ -1,5 +1,7 @@
 import GalleryItem from '../GalleryItem/GalleryItem.jsx'
 
+
+
 function GalleryList({galleryList}) {
     return (
         <div>

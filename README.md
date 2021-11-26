@@ -21,6 +21,6 @@ TO DO:
 [x] Create component for GalleryItem, pass it the individual gallery item via props
     - [x] Update 'GalleryList' to use this component to display an image
     - [x] Swap the image with the description on click (use conditional rendering)
-    - [ ] Display number of loves and include love button
+    - [x] Display number of loves and include love button
     - [ ] When love button is clicked, use axios to update (PUT) the love count '/gallery/like/:id'
     - [ ] Update the gallery each time a like button is clicked (run function associated with GET route)

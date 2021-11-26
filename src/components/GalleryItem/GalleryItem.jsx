@@ -1,22 +1,15 @@
 import { useState } from 'react';
 
 
-function GalleryItem({ gallery }) {
+function GalleryItem({gallery}) {
 
     // create useState for image
     const [showImage, setShowImage] = useState(gallery.path);
-    // create useState for click count
-    const [clickCount, setClickCount] = useState(0);
-
-    // create function to update total clicks
-    const updateClickTotal = () => {
-        setClickCount(clickCount + 1);
-    };
 
     // create function to either show image or show description based on state
     const displayImageOrDescription = () => {
         if (showImage === gallery.path) {
-            return <img className="photo" key={gallery.id} 
+            return <img className="photo" 
                     src={gallery.path} onClick={toggleImage}/>
         } else {
             return <p className="photo"
@@ -34,14 +27,20 @@ function GalleryItem({ gallery }) {
         };
     };
 
+    // const handleClick = (event) => {
+    //     console.log(event.target.id);
+    //     const photo = event.target;
+    //     addLikes(event);
+    // };
+
 
     return (
-        <div className="images-descriptions">
+        <div key={gallery.id} className="images-descriptions">
             {displayImageOrDescription()}
             <div>
-            <button onClick={updateClickTotal}>💟</button>
+            <button id={gallery.id}>💟</button>
             </div>
-            <p>{clickCount} people love this photo!</p>
+            <p>{gallery.likes} people love this photo!</p>
         </div>
     );
 };
