@@ -15,9 +15,9 @@ TO DO:
 [x] Add images to public/images folder
 [x] Modify galleryItems array (in `server/modules/data.js`) to include an `id`, `title`, `description` and `path for`
 [x] Use axios to GET data from '/gallery' and store in App.jsx
-[ ] Create component for GalleryList, pass in gallery data stored in 'App' via props
-    - [ ] Iterate over list of gallery data (.map)
-    - [ ] Make GalleryItems (array?) 
+[x] Create component for GalleryList, pass in gallery data stored in 'App' via props
+    - [x] Iterate over list of gallery data (.map)
+    - [ ] Make GalleryItems 
 [ ] Create component for GalleryItem, pass it the individual gallery item via props
     - [ ] Update 'GalleryList' to use this component to display an image
     - [ ] Swap the image with the description on click (use conditional rendering)

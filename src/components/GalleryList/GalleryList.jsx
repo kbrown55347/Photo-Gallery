@@ -1,9 +1,11 @@
+import GalleryItem from '../GalleryItem/GalleryItem.jsx'
+
 function GalleryList({galleryList}) {
     return (
         <div>
-            {galleryList.map(gallery => (
-                <img key={gallery.id} src={gallery.path}/>
-            ))}
+            {galleryList.map((gallery) => {
+                return <GalleryItem gallery={gallery} />
+            })}
         </div>
     );
 };
