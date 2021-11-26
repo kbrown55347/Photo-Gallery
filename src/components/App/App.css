@@ -14,9 +14,10 @@
 }
 
 .photo {
-  border-radius: 1em;
+  border-radius: 2em;
   width: 20em;
   height: 20em;
+  padding: 1em;
 }
 
 .images-descriptions {  

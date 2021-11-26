@@ -5,7 +5,13 @@ function GalleryItem({ gallery }) {
 
     // create useState for image
     const [showImage, setShowImage] = useState(gallery.path);
+    // create useState for click count
+    const [clickCount, setClickCount] = useState(0);
 
+    // create function to update total clicks
+    const updateClickTotal = () => {
+        setClickCount(clickCount + 1);
+    };
 
     // create function to either show image or show description based on state
     const displayImageOrDescription = () => {
@@ -32,7 +38,10 @@ function GalleryItem({ gallery }) {
     return (
         <div className="images-descriptions">
             {displayImageOrDescription()}
-            <button>💕</button>
+            <div>
+            <button onClick={updateClickTotal}>💟</button>
+            </div>
+            <p>{clickCount} people love this photo!</p>
         </div>
     );
 };
