@@ -17,9 +17,9 @@ TO DO:
 [x] Use axios to GET data from '/gallery' and store in App.jsx
 [x] Create component for GalleryList, pass in gallery data stored in 'App' via props
     - [x] Iterate over list of gallery data (.map)
-    - [ ] Make GalleryItems 
-[ ] Create component for GalleryItem, pass it the individual gallery item via props
-    - [ ] Update 'GalleryList' to use this component to display an image
+    - [x] Make GalleryItems 
+[x] Create component for GalleryItem, pass it the individual gallery item via props
+    - [x] Update 'GalleryList' to use this component to display an image
     - [ ] Swap the image with the description on click (use conditional rendering)
     - [ ] Display number of loves and include love button
     - [ ] When love button is clicked, use axios to update (PUT) the love count '/gallery/like/:id'
