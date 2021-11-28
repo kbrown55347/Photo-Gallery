@@ -13,7 +13,7 @@ function GalleryItem({gallery, addLikes}) {
             return <img className="photo" 
                     src={gallery.path} onClick={toggleImage}/>
         } else {
-            return <p className="photo"
+            return <p className="description"
                     onClick={toggleImage}>
                     {gallery.description}</p>
         };
@@ -43,7 +43,7 @@ function GalleryItem({gallery, addLikes}) {
                 color="success"
                 onClick= {handleClick}>🤍</Button>
             </div>
-                <p>{gallery.likes} people love this photo!</p>
+                <p className="likes">{gallery.likes} people love this photo!</p>
         </div>
     );
 };

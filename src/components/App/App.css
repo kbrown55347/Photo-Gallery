@@ -3,17 +3,17 @@
 }
 
 .App-header {
-  background-color: #222;
-  padding: 1em;
+  background-color:	#5C4033;
+  padding: 2em;
   color: white;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .App-title {
   font-size: 1.5em;
 }
 
-.photo {
+.photo, .description {
   border-radius: 2em;
   width: 20em;
   height: 20em;
@@ -24,3 +24,20 @@
   display: inline-block;
 }
 
+.description {
+  color: #5C4033;
+  line-height: 200%;
+  font-size: large;
+  text-align: center;
+  border: 3px solid #5C4033;
+  border-radius: 2em;
+  width: 17em;
+  height: 17em;
+  padding: 1em;
+  margin: 1em;
+  background-image: url("https://bhf-cdn.azureedge.net/bhf-blob-prod/0012674_fintex-light-brown-woven-texture_600.jpeg");
+}
+
+.likes {
+  color: #5C4033;
+}
