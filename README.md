@@ -1,4 +1,4 @@
-# React - Gallery Display
+# Photo Gallery
 
 ## Description
 
